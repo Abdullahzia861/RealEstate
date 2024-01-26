@@ -1,0 +1,398 @@
+:root {
+  --color-secondary: #101d2c;
+  --color-primary-dark: #b28451;
+  --color-white:#ffffff;
+  --font-primary: "Josefin Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-primary);
+  overflow: auto;
+
+}
+.container {
+  display: grid;
+  grid-template-rows: 5rem 600px 40vh  45vh auto auto;
+  grid-template-areas: "header" "main" "service" "properties" "contact" "footer";
+}
+
+/* header */
+
+.header {
+  background-color: var(--color-primary-dark);
+
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+.logo1 {
+color: var(--color-white);
+}
+.logo2 {
+  color: var(--color-white);
+}
+.navbar ul {
+  margin-right: 2rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.navbar ul li {
+  padding: 1rem;
+  margin-right: 1rem;
+  transition: background-color 0.2s;
+}
+.navbar ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+.navbar ul li:hover{
+    background-color: rgba(206, 197, 197, 0.267);
+    border-radius: 1rem;
+}
+
+/* main */
+
+.main {
+  grid-area: main;
+
+  display: grid;
+  grid-template-rows: repeat(2, 18vw);
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "left right";
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #101d2cbb;
+
+}
+.homecontent {
+    position: relative;
+  padding: 5rem;
+  grid-area: left;
+  background: url("res/images/bg.jpeg") center/cover no-repeat;
+
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.homecontent h3{
+
+color: var(--color-primary-dark);
+position: relative;
+padding-bottom: 2rem;
+font-size: 1.2rem;
+}
+.homecontent h2{
+    position: relative;
+    color: white;
+    font-size: 2.2rem;
+}
+.btndiv{
+    position: relative;
+}
+.btndiv button{
+    background-color: var(--color-primary-dark);
+    width: 14rem;
+    height: 4rem;
+    border: none;
+    border-radius:10px;
+}
+.btndiv button a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.realtor {
+  grid-area: right;
+  background-color: var(--color-secondary);
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  color: white;
+}
+.realtordt img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 1rem;
+}
+.realtordiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rems;
+}
+
+/* service */
+
+.service{
+    grid-area: service;
+    display: grid;
+    grid-template-rows:3rem 12rem 12rem;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "i1 i1 i1" "i2 i3 i4" "i5 i6 i7";
+    background-color: rgb(255, 255, 255);
+    padding: 3.5rem;
+    height: fit-content;
+    row-gap: 2rem;
+}
+.serhead{
+grid-area: i1;
+grid-column: 1 / span 3;
+
+}
+.i1{
+    color: #b28451;
+    font-size: 1.5rem;
+}
+.i2{
+    grid-area: i2;
+}
+
+.i3{
+    grid-area: i3;
+}
+
+.i4{
+    grid-area: i4;
+}
+
+.i5{
+    grid-area: i5;
+}
+
+.i6{
+    grid-area: i6;
+}
+
+.i7{
+    grid-area: i7;
+}
+.serv{
+    padding: 4rem;
+    text-align: justify;
+}
+.serv h2{
+
+    color: var(--color-primary-dark);
+}
+.properties{
+  
+    grid-area: properties;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 9rem 25rem 25rem ;
+    row-gap: 4.5rem;
+  
+    grid-template-areas: "hh hh hh" "im1 im2 im3" "im4 im5 im6";
+}
+.im1{
+  grid-area: im1;
+}
+
+.im2{
+  grid-area: im2;
+}
+
+.im3{
+  grid-area: im3;
+}
+
+.im4{
+  grid-area: im4;
+}
+
+.im5{
+  grid-area: im5;
+}
+
+.im6{
+  grid-area: im6;
+}
+.p1{
+ background-color:var(--color-white); 
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ gap: 20px;
+}
+.homeimg{
+  background-color: rgb(247, 245, 245);
+}
+.homeimg img{
+  width: 350px;
+  height: 250px;
+  margin-bottom: 2rem;
+}
+.homedetail{
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas: "d1 d2" "d3 d4" "d5 d5";
+  justify-items: center;
+  row-gap: 1rem;
+  column-gap: 2rem;
+}
+.d1{
+  grid-area: d1;
+}
+
+.d2{
+  grid-area: d2;
+}
+
+.d3{
+  grid-area: d3;
+}
+
+.d4{
+  grid-area: d4;
+}
+.d5{
+  grid-area: d5;
+
+}
+.d5 button{
+  background-color: var(--color-primary-dark);
+  border: none;
+  width:22rem ;
+  height: 3rem;
+}
+.d5 button a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+font-size: 1.1rem;  
+}
+.hh{
+  grid-area: hh;
+  color: var(--color-primary-dark);
+  font-size: 1.5rem;
+  grid-column: 1 / span 3;
+  display: flex;
+  align-items: center;
+  margin-left: 4.5rem;
+}
+/* Contact Section */
+.contact {
+
+  margin-top: 5rem;
+  grid-area: contact;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 3rem;
+}
+
+.contact-form {
+  background-color: var(--color-primary-dark);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.contact-form label {
+  color: white;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color:#8d6940;
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-info {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+
+/* footer */
+
+.footer {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-item h3 {
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+}
