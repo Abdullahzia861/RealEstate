@@ -28,14 +28,19 @@ body {
 
 .header {
   background-color: var(--color-primary-dark);
-
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
+  position: relative;
 }
+
 .logo1 {
 color: var(--color-white);
 }
@@ -132,6 +137,7 @@ font-size: 1.2rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 3rem;
   padding: 1rem;
   color: white;
 }
@@ -396,3 +402,109 @@ font-size: 1.1rem;
 .footer-bottom {
   margin-top: 2rem;
 }
+
+/* Add this CSS at the end of your existing styles */
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar ul {
+      margin-top: 1rem;
+      text-align: center;
+  }
+
+  .navbar ul li {
+      margin: 0.5rem;
+  }
+
+  .container {
+      grid-template-rows: 5rem auto auto auto auto auto;
+  }
+
+  .main {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+  }
+
+  .homecontent,
+  .realtor,
+  .service,
+  .properties,
+  .contact {
+      padding: 2rem;
+  }
+
+  .realtordiv img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .service {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+  }
+
+  .serv,
+  .properties {
+      padding: 2rem;
+  }
+
+  .homeimg img {
+      width: 100%;
+  }
+
+  .homedetail {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+}
+
+/* Media query for very small screens */
+@media screen and (max-width: 480px) {
+  .navbar {
+      padding: 1rem;
+  }
+
+  .navbar h2 {
+      font-size: 1.5rem;
+  }
+
+  .navbar ul {
+      margin-top: 0.5rem;
+  }
+
+  .serv,
+  .properties {
+      padding: 1rem;
+  }
+
+  .homecontent h3 {
+      font-size: 1.2rem;
+  }
+
+  .homecontent h2 {
+      font-size: 1.8rem;
+  }
+
+  .btndiv button {
+      width: 100%;
+  }
+}
+
+/* Sticky Navbar */
+body {
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-primary-dark);
+}
+
